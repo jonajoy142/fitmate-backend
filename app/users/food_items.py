@@ -58,7 +58,7 @@ async def read_biomatrix_data(user_id: int, db_session: Session = Depends(get_db
     ex_user = db_session.query(models.User).filter(models.User.id == user_id).first()
     if not ex_user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="You are unauthorized to use this route")
-    food_data = db_session.query(models.FoodItems).filter(models.FoodItems.user_id == user_id).first()
+    food_data = db_session.query(models.FoodItems).filter(models.FoodItems.user_id == user_id).all()
 
     if not food_data:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="data not found")
