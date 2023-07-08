@@ -11,7 +11,7 @@ from app.users.food_items import foodItemRouter
 import app.server.models as models
 
 # main router
-app = FastAPI(title="FITMATE API", version=0.1)
+app = FastAPI(title="FITMATE API", version="1.0")
 
 #create all tables in the database
 models.base.metadata.create_all(bind=engine)
