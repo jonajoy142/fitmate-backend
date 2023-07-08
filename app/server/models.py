@@ -22,6 +22,7 @@ class BioMetrix(base):
     age = Column(Integer)
     height = Column(Float)
     weight = Column(Float)
+    bmi = Column(Float)
 
 class FoodItems(base):
     __tablename__ = "food_items"

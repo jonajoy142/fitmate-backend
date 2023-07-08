@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from app.server.database import engine
 
 from app.users.authetication import authRouter
+from app.users.biomatrix import bioMetrixRouter
 
 import app.server.models as models
 
@@ -24,4 +25,7 @@ def read_root():
     return {"status":"OK","message":"Available to integrate"}
 
 # include auth router
-app.include_router(router=authRouter,tags=["User Authentication"])
+app.include_router(router=authRouter,tags=["User Authentication"],prefix='/user')
+
+# include bio matrix router
+app.include_router(router=bioMetrixRouter,tags=["User BioMetrix"],prefix='/user/data')
