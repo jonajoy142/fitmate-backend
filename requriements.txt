@@ -1,0 +1,15 @@
+click
+fastapi
+h11
+idna
+pydantic
+sniffio
+starlette
+typing_extensions
+uvicorn
+psycopg2-binary
+SQLAlchemy
+python-dotenv
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
