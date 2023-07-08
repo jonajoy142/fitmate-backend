@@ -20,3 +20,9 @@ class UpdateBioMatricData(BaseModel):
     age: Optional[int] = None
     height: Optional[float] = None
     weight: Optional[float] = None 
+
+class FoodItems(BaseModel):
+    food_name : str
+    food_type:str
+    quantity:float
+    calories:float

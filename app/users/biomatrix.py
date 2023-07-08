@@ -23,6 +23,12 @@ async def add_biomatrix_data(user_id:int ,data: user_utils.BioMatricData, db_ses
     ex_user = db_session.query(models.User).filter(models.User.id == user_id).first()
     if not ex_user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="You are unauthorized to use this route")
+    
+    bio_matrix_data = db_session.query(models.BioMetrix).filter(models.BioMetrix.user_id == user_id).first()
+
+    if  bio_matrix_data:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="data already added")
+    
     new_bio_data = models.BioMetrix()
     new_bio_data.user_id = user_id
     new_bio_data.age = data.age

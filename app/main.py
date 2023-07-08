@@ -6,6 +6,7 @@ from app.server.database import engine
 
 from app.users.authetication import authRouter
 from app.users.biomatrix import bioMetrixRouter
+from app.users.food_items import foodItemRouter
 
 import app.server.models as models
 
@@ -29,3 +30,6 @@ app.include_router(router=authRouter,tags=["User Authentication"],prefix='/user'
 
 # include bio matrix router
 app.include_router(router=bioMetrixRouter,tags=["User BioMetrix"],prefix='/user/data')
+
+# include food router
+app.include_router(router=foodItemRouter,tags=["User Food data"],prefix='/user/data')
