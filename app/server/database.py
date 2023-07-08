@@ -26,6 +26,7 @@ engine = create_engine(DATABASE_URL)
 local_session = sessionmaker(
     autoflush=False,
     autocommit=False,
+    bind=engine,
 )
 
 # base to create models to database

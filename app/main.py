@@ -3,6 +3,9 @@ sys.path.append("../")
 from fastapi import FastAPI
 from sqlalchemy.orm import Session
 from app.server.database import engine
+
+from app.users.authetication import authRouter
+
 import app.server.models as models
 
 # main router
@@ -19,3 +22,6 @@ def read_root():
     :return : status of the api
     """
     return {"status":"OK","message":"Available to integrate"}
+
+# include auth router
+app.include_router(router=authRouter,tags=["User Authentication"])

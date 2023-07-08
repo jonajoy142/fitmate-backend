@@ -12,8 +12,8 @@ def get_db()->Session:
     Connect to database 
     :return : local session of database
     """
+    db_session = local_session()
     try:
-        db_session = local_session()
         yield db_session
     finally:
         db_session.close()
