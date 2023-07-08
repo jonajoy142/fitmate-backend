@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 # main router
-app = FastAPI(title="FITMATE API", version=0.1,)
+app = FastAPI(title="FITMATE API", version=0.1)
 
 # root 
 @app.get(path="/",tags=["Root Route"])
